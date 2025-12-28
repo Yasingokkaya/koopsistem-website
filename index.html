@@ -8,6 +8,7 @@
         <title>KoopSistem - Kooperatif Yönetim Çözümü</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <link href="css/styles.css" rel="stylesheet" />
@@ -46,6 +47,133 @@
             }
             .masthead { padding-top: calc(6rem + 74px); padding-bottom: 6rem; }
             .masthead .masthead-avatar { width: 10rem; }
+
+            /* WhatsApp Sabit Buton Stili */
+.whatsapp-support {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #25d366;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+    z-index: 9999;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.whatsapp-support:hover {
+    transform: translateY(-5px) scale(1.05);
+    background: #128c7e;
+    color: white;
+    box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-support i {
+    font-size: 1.6rem;
+}
+
+/* Mobilde sadece ikon olarak görünsün (Daha kibar durur) */
+@media (max-width: 768px) {
+    .whatsapp-support {
+        bottom: 20px;
+        right: 20px;
+        padding: 15px;
+        border-radius: 50%;
+    }
+    .whatsapp-support span {
+        display: none;
+    }
+}
+/* SSS Bölümü Özel Stilleri */
+#faq {
+    background-color: #f8fafc;
+}
+
+.faq-card {
+    border: none;
+    border-radius: 15px !important;
+    margin-bottom: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    overflow: hidden;
+}
+
+.accordion-button {
+    font-weight: 600;
+    color: #1e293b;
+    padding: 20px;
+    background-color: white !important;
+    border: none !important;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #0d6efd; /* Temanızdaki ana mavi renk */
+    box-shadow: none;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: rgba(0,0,0,.125);
+}
+
+.accordion-body {
+    padding: 0 20px 25px;
+    color: #64748b;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.faq-title-badge {
+    background: rgba(13, 110, 253, 0.1);
+    color: #0d6efd;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+}
+/* Uygulama Ekran Görüntüleri Galeri Stili */
+.screenshot-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid #f1f5f9;
+}
+
+.screenshot-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08) !important;
+}
+
+.screenshot-card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #f1f5f9;
+    cursor: zoom-in;
+}
+
+.screenshot-info {
+    padding: 20px;
+}
+
+.screenshot-info h6 {
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 5px;
+}
+
+.screenshot-info p {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 0;
+}
         </style>
     </head>
     <body id="page-top">
@@ -192,48 +320,162 @@
                 </div>
             </div>
         </section>
-        
-        <section class="page-section" id="contact">
-            <div class="container">
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Bize Ulaşın</h2>
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-phone"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                
-                <div class="text-center mb-5">
-                    <a href="https://wa.me/905xxxxxxxxx" target="_blank" class="btn btn-success btn-xl shadow-lg rounded-pill px-5">
-                        <i class="fa-brands fa-whatsapp me-2 fa-lg"></i> WhatsApp İle Hızlı Destek
-                    </a>
-                    <p class="text-muted mt-3">veya aşağıdaki formu doldurun, biz sizi arayalım.</p>
-                </div>
+<section id="ekran-goruntuleri" class="py-5 bg-light bg-opacity-50">
+    <div class="container py-lg-4">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold text-dark">Sistemin Temel Özellikleri</h2>
+            <p class="text-muted">Büyükbaş işletmenizi yönetmeniz için ihtiyacınız olan her şey tek ekranda.</p>
+        </div>
 
-                <div class="row justify-content-center">
-                    <div class="col-lg-8 col-xl-7">
-                        <form id="contactForm">
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Adınız..." required />
-                                <label for="name">Ad Soyad / Kooperatif Adı</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="email" type="email" placeholder="mail@ornek.com" required />
-                                <label for="email">E-posta Adresi</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="phone" type="tel" placeholder="(555) ..." required />
-                                <label for="phone">Telefon Numarası</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <textarea class="form-control" id="message" placeholder="Mesajınız..." style="height: 10rem" required></textarea>
-                                <label for="message">Mesaj / Talep</label>
-                            </div>
-                            <button class="btn btn-primary btn-xl w-100" id="submitButton" type="submit">GÖNDER</button>
-                        </form>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="screenshot-card shadow-sm h-100 border-0">
+                    <div class="text-center py-5 rounded-top-4" style="background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);">
+                        <i class="fa-solid fa-bottle-droplet fa-5x text-primary opacity-75"></i>
+                    </div>
+                    <div class="screenshot-info bg-white rounded-bottom-4">
+                        <h6>Dijital Süt Defteri</h6>
+                        <p>Sabah ve akşam sütlerinizi ayrı ayrı kaydedin, defter tutma derdinden kurtulun. Aylık toplamınızı anlık görün.</p>
                     </div>
                 </div>
             </div>
-        </section>
+
+            <div class="col-md-4">
+                <div class="screenshot-card shadow-sm h-100 border-0">
+                    <div class="text-center py-5 rounded-top-4" style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);">
+                        <i class="fa-solid fa-cow fa-5x text-success opacity-75"></i>
+                    </div>
+                    <div class="screenshot-info bg-white rounded-bottom-4">
+                        <h6>Akıllı Sürü Yönetimi</h6>
+                        <p>İneklerinizin gebelik ve kuru dönem takiplerini yapın. Zamanı geldiğinde sistem sizi otomatik uyarsın.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="screenshot-card shadow-sm h-100 border-0">
+                    <div class="text-center py-5 rounded-top-4" style="background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);">
+                        <i class="fa-solid fa-wheat-awn fa-5x text-warning opacity-75"></i>
+                    </div>
+                    <div class="screenshot-info bg-white rounded-bottom-4">
+                        <h6>Kolay Yem Siparişi</h6>
+                        <p>Kooperatifteki yem çeşitlerini görün, ihtiyacınız olanı seçin ve tek tuşla siparişinizi oluşturun.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        <section id="faq" class="py-5">
+    <div class="container py-lg-4">
+        <div class="text-center mb-5">
+            <span class="faq-title-badge mb-3">Merak Edilenler</span>
+            <h2 class="fw-bold text-dark">Sıkça Sorulan Sorular</h2>
+            <p class="text-muted">KoopSistem hakkında en çok sorulan soruların yanıtlarını burada bulabilirsiniz.</p>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="accordion" id="accordionFAQ">
+                    
+                    <div class="accordion-item faq-card">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                KoopSistem tam olarak nedir?
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body">
+                                KoopSistem, süt toplama merkezleri ve tarımsal kalkınma kooperatifleri için geliştirilmiş bulut tabanlı bir yönetim yazılımıdır. Üreticilerin süt teslimatlarını, yem siparişlerini ve güncel borç/alacak bakiyelerini anlık olarak takip etmelerini sağlar.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item faq-card">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                Verilerimiz ne kadar güvende?
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body">
+                                Verileriniz dünyanın en güvenli bulut altyapılarından biri olan Google Cloud (Firebase) üzerinde saklanmaktadır. Günlük otomatik yedekleme ve SSL şifreleme protokolleri ile bilgileriniz kooperatif yöneticileri dışında kimseyle paylaşılmaz.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item faq-card">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                Üreticiler sistemi kullanmak için ücret ödüyor mu?
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body">
+                                Hayır, üreticiler (çiftçiler) mobil paneli tamamen ücretsiz olarak kullanabilirler. Sistem maliyeti sadece kooperatif yönetimi tarafından karşılanır ve üye sayısına göre esnek paketler sunulur.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item faq-card">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                İnternet olmayan yerlerde sistem çalışır mı?
+                            </button>
+                        </h2>
+                        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body">
+                                Sistem çevrimiçi çalışacak şekilde tasarlanmıştır. Ancak mobil uyumlu yapısı sayesinde çok düşük internet hızlarında dahi sorunsuz çalışabilir. Veriler internet bağlantısı olduğu anda bulut sunucularla senkronize edilir.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="page-section" id="contact">
+    <div class="container">
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Bize Ulaşın</h2>
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-phone"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        
+        <div class="text-center mb-5">
+            <a href="https://wa.me/905072274343?text=Merhaba, KoopSistem yazılımınız hakkında bilgi almak istiyorum." target="_blank" class="btn btn-success btn-xl shadow-lg rounded-pill px-5">
+                <i class="fa-brands fa-whatsapp me-2 fa-lg"></i> WhatsApp İle Hızlı Destek
+            </a>
+            <p class="text-muted mt-3">veya aşağıdaki formu doldurun, biz sizi arayalım.</p>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-xl-7">
+                <form id="contactForm">
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="name" type="text" placeholder="Adınız..." required />
+                        <label for="name">Ad Soyad / Kooperatif Adı</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="email" type="email" placeholder="mail@ornek.com" required />
+                        <label for="email">E-posta Adresi</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="phone" type="tel" placeholder="05xx..." required />
+                        <label for="phone">Telefon Numarası</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <textarea class="form-control" id="message" placeholder="Mesajınız..." style="height: 10rem" required></textarea>
+                        <label for="message">Mesaj / Talep</label>
+                    </div>
+                    <button class="btn btn-xl w-100 fw-bold text-white shadow" id="submitButton" type="submit" style="background-color: #0f766e; border: none;">MESAJI GÖNDER</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
         
         <footer class="footer text-center">
             <div class="container">
@@ -241,7 +483,7 @@
                     <div class="col-lg-4 mb-5 mb-lg-0">
                         <h4 class="text-uppercase mb-4">Adres</h4>
                         <p class="lead mb-0">
-                            Teknokent Yazılım Ofisi
+                            Yazılım Ofisi
                             <br />
                             Merkez, Türkiye
                         </p>
@@ -263,7 +505,7 @@
         </footer>
         
         <div class="copyright py-4 text-center text-white">
-            <div class="container"><small>Telif Hakkı &copy; KoopSistem 2023</small></div>
+            <div class="container"><small>Telif Hakkı &copy; KoopSistem 2026</small></div>
         </div>
         
         <div class="portfolio-modal modal fade" id="modalSut" tabindex="-1" aria-hidden="true">
@@ -418,5 +660,53 @@
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="js/scripts.js"></script>
+        <a href="https://wa.me/905072274343?text=Merhaba, KoopSistem yazılımınız hakkında bilgi almak istiyorum." class="whatsapp-support" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span>Hızlı Destek</span>
+</a>
+<script type="module">
+    // Firebase konfigürasyonunuzdan gerekli modülleri alıyoruz
+    // Not: js/firebase-config.js dosyanızın doc ve setDoc veya addDoc içerdiğinden emin olun
+    import { db } from "./js/firebase-config.js";
+    import { collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+    const contactForm = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitButton');
+
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        submitBtn.disabled = true;
+        submitBtn.innerText = "Gönderiliyor...";
+
+        const formData = {
+            adSoyad: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            telefon: document.getElementById('phone').value,
+            mesaj: document.getElementById('message').value,
+            tarih: serverTimestamp() // Mesajın geldiği saat
+        };
+
+        try {
+            // Firestore'da 'iletisim_talepleri' isimli bir koleksiyona kaydeder
+            await addDoc(collection(db, "iletisim_talepleri"), formData);
+            
+            Swal.fire({
+                title: 'Mesajınız Alındı!',
+                text: 'En kısa sürede sizinle iletişime geçeceğiz.',
+                icon: 'success',
+                confirmButtonColor: '#0f766e'
+            });
+
+            contactForm.reset(); // Formu temizle
+        } catch (error) {
+            console.error("Hata:", error);
+            Swal.fire('Hata!', 'Mesaj gönderilirken bir sorun oluştu.', 'error');
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerText = "MESAJI GÖNDER";
+        }
+    });
+</script>
     </body>
 </html>
